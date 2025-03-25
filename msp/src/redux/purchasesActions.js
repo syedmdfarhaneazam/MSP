@@ -5,9 +5,12 @@ export const setMyPurchases = (purchases) => ({
 
 export const fetchMyPurchases = () => async (dispatch) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/purchases/my-purchases", {
-    headers: { Authorization: token },
-  });
+  const response = await fetch(
+    "https://msp-qdwr.onrender.com/purchases/my-purchases",
+    {
+      headers: { Authorization: token },
+    },
+  );
   const data = await response.json();
   if (response.ok) dispatch(setMyPurchases(data));
 };

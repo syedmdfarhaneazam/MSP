@@ -5,7 +5,7 @@ export const setMyCrops = (crops) => ({
 
 export const fetchMyCrops = () => async (dispatch) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/crops/my-crops", {
+  const response = await fetch("https://msp-qdwr.onrender.com/crops/my-crops", {
     headers: { Authorization: token },
   });
   const data = await response.json();
@@ -14,7 +14,7 @@ export const fetchMyCrops = () => async (dispatch) => {
 
 export const addCrop = (cropData) => async (dispatch) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/crops", {
+  const response = await fetch("https://msp-qdwr.onrender.com/crops", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: token },
     body: JSON.stringify(cropData),
@@ -24,7 +24,7 @@ export const addCrop = (cropData) => async (dispatch) => {
 
 export const deleteCrop = (id) => async (dispatch) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/crops/${id}`, {
+  const response = await fetch(`https://msp-qdwr.onrender.com/crops/${id}`, {
     method: "DELETE",
     headers: { Authorization: token },
   });
@@ -37,7 +37,7 @@ export const setAllCrops = (crops) => ({
 
 export const fetchAllCrops = () => async (dispatch) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/crops", {
+  const response = await fetch("https://msp-qdwr.onrender.com/crops", {
     headers: { Authorization: token },
   });
   const data = await response.json();

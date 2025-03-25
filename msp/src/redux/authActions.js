@@ -18,7 +18,7 @@ export const logout = () => ({
 
 export const login = (username, password) => async (dispatch) => {
   try {
-    const response = await fetch("http://localhost:5000/auth/login", {
+    const response = await fetch("https://msp-qdwr.onrender.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -37,7 +37,7 @@ export const login = (username, password) => async (dispatch) => {
 };
 
 export const signup = (userData) => async () => {
-  const response = await fetch("http://localhost:5000/auth/signup", {
+  const response = await fetch("https://msp-qdwr.onrender.com/auth/signup", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
